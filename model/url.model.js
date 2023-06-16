@@ -1,15 +1,19 @@
 import mongoose from "mongoose";
-import shortId from 'shortid'
+
 
 export const UrlSchema = new mongoose.Schema({
     shortId : {
         type: String,
         required : true,
-        default:shortId.generate
     },
     redirectURL: {
         type: String,
         required: true
+    },
+    clicks:{
+        type:Number,
+        required:true,
+        default:0
     },
     visitHistory:[{timestamp:{type:Number}}]
 },{timestamps:true})
