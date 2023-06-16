@@ -6,6 +6,8 @@ import * as controller from './controllers/appController.js';
 import Auth,{localVariables} from "./middleware/auth.js";
 import {registerMail} from './controllers/mailer.js'
 
+import * as urlcontroller from './controllers/Urlcontroller.js'
+
 
 //post
 router.route('/register').post(controller.register)
@@ -21,6 +23,11 @@ router.route('/createResetSession').get(controller.createResetSession)   //reset
 //put 
 router.route('/updateuser').put(Auth,controller.updateUser)   //is use to update the user profiles
 router.route('/resetPassword').put(controller.verifyUser,controller.resetPassword)  //use to reset password 
+
+
+///URl shorter
+router.post('/url',urlcontroller.handleGenerateNewShortUrl)
+router.get('/:shortId',urlcontroller.generateshortId)
 
 
 export default router;
