@@ -26,7 +26,7 @@ router.route('/resetPassword').put(controller.verifyUser,controller.resetPasswor
 
 
 ///URl shorter
-router.post('/url',urlcontroller.handleGenerateNewShortUrl)
+router.post('/',urlcontroller.handleGenerateNewShortUrl)
 router.get('/:shortId',urlcontroller.generateshortId)
 
 

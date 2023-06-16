@@ -3,7 +3,7 @@ import UrlModel from "../model/url.model.js";
 
 export async function handleGenerateNewShortUrl (req,res) {
 
-      const url = req.body.url
+      const url = req.query.url;
       if(!url) return res.status(400).json({error:'url is required'})
       const record = new UrlModel({
         redirectURL: url
