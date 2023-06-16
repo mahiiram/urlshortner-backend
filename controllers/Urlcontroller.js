@@ -30,5 +30,5 @@ export async function generateshortId (req,res) {
          })
          entry.clicks++
          await entry.save()
-         return res.redirect(entry.redirectURL)
+         res.redirect(entry.redirectURL)
 } 
